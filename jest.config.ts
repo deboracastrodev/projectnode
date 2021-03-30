@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/en/configuration.html
  */
 
-export default {
+module.exports = {
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
@@ -14,4 +14,4 @@ export default {
   transform: {
     '.*\\.ts$': 'ts-jest'
   }
-};
+}
