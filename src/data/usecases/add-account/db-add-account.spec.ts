@@ -26,7 +26,6 @@ const makeAddAccountRepository = (): AddAccountRepository => {
 }
 
 const makeFakeAccount = (): AccountModel => ({
-  id: 'valid_id',
   name: 'valid_name',
   email: 'valid_email',
   password: 'hashed_password'
@@ -68,10 +67,6 @@ describe('DbAddAccount Usecase', () => {
     const { sut, addAccountRepositoryStub } = makeSut()
     const addSpy = jest.spyOn(addAccountRepositoryStub, 'add')
     await sut.add(makefakeAccountData())
-    expect(addSpy).toHaveBeenCalledWith({
-      name: 'valid_name',
-      email: 'valid_email',
-      password: 'hashed_password'
-    })
+    expect(addSpy).toHaveBeenCalledWith(makeFakeAccount())
   })
 })
