@@ -26,12 +26,14 @@ const makeAddAccountRepository = (): AddAccountRepository => {
 }
 
 const makeFakeAccount = (): AccountModel => ({
+  id: 'valid_id',
   name: 'valid_name',
   email: 'valid_email',
   password: 'hashed_password'
 })
 
 const makefakeAccountData = (): AddAccountModel => ({
+  id: 'valid_id',
   name: 'valid_name',
   email: 'valid_email',
   password: 'valid_password'
